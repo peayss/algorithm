@@ -1,33 +1,37 @@
+// res, visited 배열 초기화 필수 !!!
+
 #include <bits/stdc++.h>
 #define MAX 101
 using namespace std;
 
 int visited[MAX];
-int n, m, total, result, min_total = 999;
+int n, m, total, result, min_total = 9999999;
 
 queue<int> q;
 vector<int> adj[MAX]; // 친구 관계 배열
-int res[MAX][MAX];
-int dist[101];
+int res[MAX]; // 거리 저장 배열
 
-void bfs(){
+int bfs(int start){
+    total = 0;
+    q.push(start);
+    visited[start] = 1;
+
     while (!q.empty()){
-        int now = q.front(); 
-        q.pop();
+        int now = q.front(); q.pop();
 
-        for(int i=0; i<adj[now].size(); i++){
-            int next = adj[now][i+1];
-            if (visited[next] == 0){
+        for (int i = 0; i < adj[now].size(); i++){
+            int next = adj[now][i];
+            if (!visited[next]){
                 q.push(next);
                 visited[next] = 1;
-                res[i][next] = res[i][now] + 1;
-                res[next][i] = res[now][i] + 1;
+                res[next] = res[now] + 1;
+                total += res[next];
             }
         }
     }
+    return total;
 }
-int main()
-{
+int main(){
     cin >> n >> m;
     for (int i = 0; i < m; i++){
         int a, b;
@@ -36,27 +40,15 @@ int main()
         adj[b].push_back(a);
     }
 
-    for (int i=1; i<=n; i++){
-        total = 0;
-        int now = i;
-        q.push(now);
-        visited[now] = 1;
-        bfs();
+    for (int i = 1; i <= n; i++){
+        int t = bfs(i);
 
-        for (int j=1; j<=n; j++){
-            total += res[now][j];
-        }
-
-        if (total < min_total){
-            min_total = total;
+        if (t < min_total){
+            min_total = t;
             result = i;
         }
-    }
-    for (int i=1; i<=n; i++){
-        for (int j=1; j<=n; j++)
-            cout << res[i][j];
-        cout << '\n';
+        memset(visited, 0, sizeof(visited));
+        memset(res, 0, sizeof(res));
     }
     cout << result;
-    
 }
