@@ -33,7 +33,7 @@ void dijkstra(int start){
 
         for (int i=0; i<adj[now.dest].size(); i++){
             Node next = adj[now.dest][i];
-            if ((dist[now.dest] + next.cost) < dist[next.dest]){
+            if (dist[next.dest] > (dist[now.dest] + next.cost)) {
                 dist[next.dest] = (dist[now.dest] + next.cost);
                 pq.push(Node(next.dest, dist[next.dest]));
             }
