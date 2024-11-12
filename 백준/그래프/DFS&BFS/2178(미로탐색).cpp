@@ -33,7 +33,6 @@ void bfs(int r, int c){
                 q.push(next);
                 dis[next_x][next_y] = dis[x][y] + 1;
                 visited[next_x][next_y] = 1;
-                //cout << next_x << " " << next_y << '\n';
             }
         }
     }
