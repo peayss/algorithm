@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 #define MAX 501
-#define INF 9999999999999
+#define INF 999999999999
 
 using namespace std;
 
@@ -28,18 +28,17 @@ void bellmanFord(){
     dist[1] = 0;
     for (int k=1; k<=n; k++){
         for (int i=1; i<=n; i++) {
-                for (int j=0; j<adj[i].size(); j++){
-                    int next = adj[i][j].dest;
-                    int nextcost = adj[i][j].cost;
-                    
-                    if (dist[i] == INF) continue;
-                    if (dist[i]!=INF && dist[next]>dist[i]+nextcost){
-                        dist[next] = dist[i]+nextcost;
-                        if (k==n) cycle = true;
-                    }
+            for (int j=0; j<adj[i].size(); j++){
+                int next = adj[i][j].dest;
+                int nextcost = adj[i][j].cost;
+                
+                if (dist[i]!=INF && dist[next]>dist[i]+nextcost){
+                    dist[next] = dist[i]+nextcost;
+                    if (k==n) cycle = true;
                 }
-            }   
-        }
+            }
+        }   
+    }
     if (cycle) cout << -1;
     else{
         for(int i=2; i<=n; i++){
