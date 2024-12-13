@@ -13,7 +13,7 @@ int main(){
         cin >> num;
         value.push_back(num);
     }
-    for (int i=1; i<=k; i++) F[i] = 10001;
+    for (int i=1; i<=k; i++) F[i] = MAX;
     for (int i=0; i<n; i++){
         for (int j=value[i]; j<=k; j++){
             F[j] = min(F[j], F[j-value[i]] + 1);

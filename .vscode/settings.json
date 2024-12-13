@@ -1,4 +1,4 @@
-{   "C_Cpp.errorSquiggles": "c++17",
+{   "C_Cpp.errorSquiggles": "enabled",
     "code-runner.executorMap": {
         "cpp": "cd $dir && g++ -std=c++17 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
     },

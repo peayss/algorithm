@@ -26,18 +26,6 @@ int main (){
         res[l++] = q.front();
         q.pop();
     }
-    // for (int i = 0; i < n; i++)
-    // {
-    //     if (count == k){
-    //         res[l++] = q.front();
-    //         int y = q.front(); q.pop();
-    //         count = 0;
-    //         continue;
-    //     }
-    //     count++;
-    //     int y = q.front(); q.pop();
-    //     q.push(y);
-    // }
 
     cout << "<";
 
@@ -49,7 +37,4 @@ int main (){
             cout << res[i] << ", ";
     }
     cout << ">";
-
-    
-    
 }
