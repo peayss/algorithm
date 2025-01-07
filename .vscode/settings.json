@@ -71,6 +71,19 @@
         "set": "cpp",
         "typeindex": "cpp",
         "unordered_set": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "any": "cpp",
+        "barrier": "cpp",
+        "codecvt": "cpp",
+        "cuchar": "cpp",
+        "memory": "cpp",
+        "latch": "cpp",
+        "numbers": "cpp",
+        "print": "cpp",
+        "semaphore": "cpp",
+        "shared_mutex": "cpp",
+        "source_location": "cpp",
+        "span": "cpp",
+        "syncstream": "cpp"
     }
 }

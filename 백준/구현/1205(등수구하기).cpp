@@ -11,13 +11,16 @@ int main() {
         int s;
         cin >> score[i];
     }
-    int cnt = 0;
+    int cnt = 0; int rank = 1;
     for (int i=1; i<=n; i++){
         if (score[i] > new_score){
-            cnt++;
+            rank++;
+        } else if (score[i] < new_score){
+            break;
         }
+        cnt++;
     }
-    if (cnt == p) cout << - 1;
-    else if (cnt == p - 1 && new_score == score[p]) cout << - 1;
-    else cout << cnt+1;
+    if (cnt == p) rank = -1;
+    if (n == 0) rank = 1;
+    cout << rank;
 }
