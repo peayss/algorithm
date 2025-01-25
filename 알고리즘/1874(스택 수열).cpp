@@ -26,7 +26,7 @@ int solve(){
     return 1;
 }
 void print(){
-    for (int i=0; i<res.size(); i++) cout << res[i] << '\n';
+    for (auto &c:res) cout << c << '\n';
 }
 int main(){
     ios::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
