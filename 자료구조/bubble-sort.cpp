@@ -2,6 +2,8 @@
 #include <vector>
 using namespace std;
 
+int cnt = 0;
+
 vector<int> bubble_sort(vector<int> target) {
 	int n = target.size();
 	int temp;
@@ -11,6 +13,7 @@ vector<int> bubble_sort(vector<int> target) {
 				temp = target[j];
 				target[j] = target[j + 1];
 				target[j + 1] = temp;
+				cnt++;
 			}
 		}
 
@@ -25,7 +28,7 @@ vector<int> bubble_sort(vector<int> target) {
 
 int main(void) {
 	int n = 5;
-	vector<int> target = { 5, 3, 1, 4, 2 };
+	vector<int> target = { 42, 32, 24, 60, 15, 5, 90, 45 };
 	auto result = bubble_sort(target);
 
 	// 최종 정렬 결과 출력
@@ -33,6 +36,6 @@ int main(void) {
 	for (int i = 0; i < n; i++) {
 		cout << result[i] << " ";
 	}
-
+	cout << cnt << '\n';
 	return 0;
 }
