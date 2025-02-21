@@ -35,7 +35,6 @@ void dijkstra(int start){
             }
         }
     }
-    
 }
 
 int main(){
