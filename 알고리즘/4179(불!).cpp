@@ -30,11 +30,10 @@ int bfs(){
             if (f){
                 dq.push_back({next_x,next_y,1});
                 arr[next_x][next_y] = '#';
-            } else {
-                if (!dist[next_x][next_y]){
-                    dq.push_back({next_x,next_y,0});
-                    dist[next_x][next_y] = dist[x][y] + 1;
-                }
+            }
+            else if (!dist[next_x][next_y]){
+                dq.push_back({next_x,next_y,0});
+                dist[next_x][next_y] = dist[x][y] + 1;
             }
         }
     }

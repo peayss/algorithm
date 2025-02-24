@@ -26,6 +26,13 @@ void dijkstra(int start){
         Node now = pq.top(); pq.pop();
         if (visited[now.dest]) continue;
         visited[now.dest] = 1;
+    
+        // for (auto &next : adj[now.dest]) {
+        //     if (dest[next.dest] > dest[now.dest] + next.cost){
+        //         dest[next.dest] = dest[now.dest] + next.cost;
+        //         pq.push(Node(next.dest, dest[next.dest]));
+        //     }
+        // }
 
         for (int i=0; i<adj[now.dest].size(); i++){
             Node next = adj[now.dest][i];

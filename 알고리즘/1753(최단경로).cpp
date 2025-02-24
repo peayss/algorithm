@@ -7,10 +7,7 @@ using namespace std;
 struct Node {
     int dest;
     int cost;
-    Node (int _dest, int _cost){
-        dest = _dest;
-        cost = _cost;
-    }
+    Node (int _dest, int _cost): dest(_dest), cost(_cost) {}
     bool operator<(const Node &n) const{
         return cost > n.cost;
     }

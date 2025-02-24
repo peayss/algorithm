@@ -29,8 +29,8 @@ int bfs(){
                 dq.push_back({nx,ny,1});
                 arr[nx][ny] = 'X';
             } else if (!w && !dist[nx][ny]){
-                    dist[nx][ny] = dist[x][y] + 1;
-                    dq.push_back({nx,ny,0});
+                dist[nx][ny] = dist[x][y] + 1;
+                dq.push_back({nx,ny,0});
             }
         }
             // cout << "arr 배열 -> " << '\n';

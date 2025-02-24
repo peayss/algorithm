@@ -17,7 +17,7 @@ int main(){
     int min = 999999999, cnt = 0;
     for (int i=1; i<=h; i++){
         //cout << "i가 -> " << i << '\n';
-        int s_num = s.size() - (lower_bound(s.begin(), s.end(), i) - s.begin());
+        int s_num = s.size() - (lower_bound(s.begin(), s.end(), i) - s.begin()); // s.end() - lower_bound(s.begin(), s.end(), i)
         //cout << "s_num -> " << s_num << '\n';
         int j_num = j.size() - (lower_bound(j.begin(), j.end(), h-i+1) - j.begin());
         //cout << "j_num -> " << j_num << '\n';
